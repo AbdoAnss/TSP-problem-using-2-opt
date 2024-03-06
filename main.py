@@ -2,7 +2,7 @@ import csv
 import pandas as pd
 import streamlit as st
 import numpy as np
-from graphviz import Digraph
+# from graphviz import Digraph
 
 def two_opt(distances):
     """
