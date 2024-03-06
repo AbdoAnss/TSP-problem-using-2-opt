@@ -49,7 +49,7 @@ st.write("This app allows you to upload a CSV file containing the distance matri
 
 st.sidebar.title("TSP Problem Solver")
 st.sidebar.write("This app uses the 2-opt algorithm to solve the traveling salesman problem. Upload a CSV file containing the distance matrix between nodes, and it will output the optimized tour and its length.")
-st.sidebar.write("Made by: ")
+st.sidebar.write("Made by: @AbdoAnss")
 
 
 st.write("Upload a CSV file containing the distance matrix")
