@@ -1,7 +1,7 @@
 import csv
 import streamlit as st
 import numpy as np
-from graphviz import Digraph
+# from graphviz import Digraph
 
 def two_opt(distances):
     """
@@ -74,10 +74,10 @@ if file_uploader:
     st.write("Longueur de la tournée optimisée:", longueur_optimisee)
     st.write("Tournée optimisée:", tournee_optimisee)
 
-    # Create a graph of the optimized tour using Graphviz
+    # # Create a graph of the optimized tour using Graphviz
 
-    dot = Digraph(comment='Optimized Tour')
-    for i in range(len(tournee_optimisee)):
-        j = (i + 1) % len(tournee_optimisee)
-        dot.edge(str(tournee_optimisee[i]), str(tournee_optimisee[j]), label=str(distances[tournee_optimisee[i]][tournee_optimisee[j]]))
-    st.graphviz_chart(dot)
+    # dot = Digraph(comment='Optimized Tour')
+    # for i in range(len(tournee_optimisee)):
+    #     j = (i + 1) % len(tournee_optimisee)
+    #     dot.edge(str(tournee_optimisee[i]), str(tournee_optimisee[j]), label=str(distances[tournee_optimisee[i]][tournee_optimisee[j]]))
+    # st.graphviz_chart(dot)
