@@ -1,7 +1,8 @@
 import csv
+import pandas as pd
 import streamlit as st
 import numpy as np
-# from graphviz import Digraph
+from graphviz import Digraph
 
 def two_opt(distances):
     """
@@ -66,15 +67,44 @@ if file_uploader:
     reader = csv.reader(contents)
     for ligne in reader:
         distances.append(list(map(float, ligne)))
+    # affichage de la matrice des distances sous forme de pandas dataframe
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.expand_frame_repr', False)
+    df = pd.DataFrame(distances)
+    st.write(df)
 
+    # html divide line
+    st.markdown('<hr>', unsafe_allow_html=True)
+
+
+    # Run the 2-opt algorithm
     tournee_optimisee = two_opt(distances)
-
     longueur_optimisee = sum(distances[tournee_optimisee[k]][tournee_optimisee[(k + 1) % len(tournee_optimisee)]] for k in range(len(tournee_optimisee)))
 
-    st.write("Longueur de la tournée optimisée:", longueur_optimisee)
-    st.write("Tournée optimisée:", tournee_optimisee)
 
-    # # Create a graph of the optimized tour using Graphviz
+    # affichage de la longueur de la tournée optimisée
+
+    st.write("Longueur de la tournée optimisée:", longueur_optimisee)
+    st.write("Tournée optimisée: " )
+    # affichage de la tournée optimisée sous forme de pandas dataframe en horizontal
+    df_tournee_optimisee = pd.DataFrame(tournee_optimisee)
+    st.write(df_tournee_optimisee.T)
+    #  affichage de la tournée optimisée sous forme de liste
+
+
+
+    st.write("Tournée optimisée sous forme de liste: ", tournee_optimisee)
+
+
+
+    
+    
+
+
+
+    
+
+    # Create a graph of the optimized tour using Graphviz
 
     # dot = Digraph(comment='Optimized Tour')
     # for i in range(len(tournee_optimisee)):
