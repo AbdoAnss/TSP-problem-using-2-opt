@@ -16,16 +16,18 @@ This application solves the Traveling Salesman Problem (TSP) using the 2-Opt Alg
 * Python 3.x
 * Streamlit
 * graphviz
+* pandas
+* numpy
 
 ### Installation
 
 1. Clone this repository to your local machine
 ```bash
-git clone https://github.com/your-username/tsp-solver.git
+git clone https://github.com/abdoanss/tsp-solver.git
 ```
 2. Install the required packages
 ```
-pip install streamlit graphviz
+pip install streamlit graphviz pandas numpy
 ```
 3. Run the application
 ```
@@ -37,7 +39,7 @@ streamlit run main.py
 ## Example CSV File
 
 Here is an example CSV file that can be used to test the application:
-```css
+```csv
 0,10,20,30,40
 10,0,5,15,25
 20,5,0,10,30
@@ -54,10 +56,6 @@ This file represents the distances between 5 cities. The first line and first co
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Acknowledgments
 
